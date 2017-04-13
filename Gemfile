@@ -52,6 +52,12 @@ gem 'bootstrap-generators', git: 'https://github.com/gstark/bootstrap-generators
 gem 'bootstrap-social-rails'
 gem 'font-awesome-rails'
 gem 'jquery-ui-rails'
+gem 'slim-rails'
+
+# USER INSTALLED
+gem 'kaminari'
+
+
 group :development do
   gem 'awesome_print'
   gem 'dotenv-rails'
