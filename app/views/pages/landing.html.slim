@@ -30,7 +30,7 @@ html
     .landing-buttons
       .row
         .col-lg-6
-          = link_to "#", class: "btn btn-warning btn-social btn-github btn-social-nextchapter" do
+          = link_to 'Login with Github', auth_path(provider: 'github'), class: "btn btn-warning btn-social btn-github btn-social-nextchapter" do
             span.fa.fa-github
             | Sign Up
 

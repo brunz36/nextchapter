@@ -55,8 +55,13 @@ gem 'jquery-ui-rails'
 gem 'slim-rails'
 
 # USER INSTALLED
+
+## PAGINATION
 gem 'kaminari'
 
+## AUTHENTICATION
+gem 'omniauth'
+gem 'omniauth-github'
 
 group :development do
   gem 'awesome_print'
