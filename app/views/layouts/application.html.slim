@@ -28,14 +28,6 @@ body
           = link_to homes_path, class: "" do
             span.glyphicon.glyphicon-book.logo
             | nextChapter
-        
-          / = link_to "nextChapter", homes_path
-          / 
-          / = link_to "#", class: "btn btn-warning btn-social btn-github btn-social-nextchapter" do
-          /   span.fa.fa-github
-          /   | Sign Up
-          / 
-          
       #navbar.collapse.navbar-collapse.pull-right
         ul.nav.navbar-nav
           li = link_to "Create New Homes", new_home_path
