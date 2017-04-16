@@ -55,6 +55,7 @@ gem 'slim-rails'
 
 ## PAGINATION
 gem 'kaminari'
+gem 'bootstrap_kaminari'
 
 ## AUTHENTICATION
 gem 'omniauth'

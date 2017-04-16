@@ -1,43 +1,40 @@
 .page-header
-  = link_to homes_path, class: 'btn btn-default' do 
-    span.glyphicon.glyphicon-list-alt
-    |  Back 
-  = link_to edit_home_path(@home), class: 'btn btn-primary' do 
-    span.glyphicon.glyphicon-pencil
-    |  Edit 
-  = link_to @home, method: :delete, data: { confirm: 'Are you sure?' }
-    span.glyphicon.glyphicon-remove
-  h1 Show home
-dl.dl-horizontal
-  dt Address:
-  dd = @home.address
-  dt City:
-  dd = @home.city
-  dt State:
-  dd = @home.state
-  dt Zip:
-  dd = @home.zip
-  dt Number bedrooms:
-  dd = @home.number_bedrooms
-  dt Number bathrooms:
-  dd = @home.number_bathrooms
-  dt Sq ft:
-  dd = @home.sq_ft
-  dt Price:
-  dd = @home.price
-  dt Description:
-  dd = @home.description
-  dt Roof:
-  dd = @home.roof
-  dt Parking:
-  dd = @home.parking
-  dt Lot size:
-  dd = @home.lot_size
-  dt Hoa:
-  dd = @home.hoa
-  dt Hoa fee:
-  dd = @home.hoa_fee
-  dt Number of floors:
-  dd = @home.number_of_floors
-  dt Year built:
-  dd = @home.year_built
+  - if current_user == @home.created_by
+    = link_to edit_home_path(@home), class: 'btn btn-warning btn_detail black_text' do 
+      span.glyphicon.glyphicon-book
+      |  edit this Chapter
+    = link_to @home, class: "btn btn-warning btn_detail black_text", method: :delete, data: { confirm: 'Are you sure?' } do
+      span.glyphicon.glyphicon-book
+      |  delete this Chapter
+  h2 =@home.address
+  - if @home.created_at > Time.now - 1.days
+    h3.pull-right NEW LISTING
+  - elsif @home.created_at > Time.now - 2.days
+    h3.pull-right.text-success Listed #{time_ago_in_words(@home.created_at)} ago
+  - elsif @home.created_at > Time.now - 30.days
+    h3.pull-right Listed #{time_ago_in_words(@home.created_at)} ago
+  - elsif @home.created_at < Time.now - 30.days
+    h3.pull-right.text-danger Listed #{time_ago_in_words(@home.created_at)} ago
+  h2 #{@home.city}, #{@home.state} #{@home.zip}
+  
+.container-fluid
+  .row
+    .col-md-6.splash_show
+      = image_tag(@home.image_url(:medium))
+    .col-md-6.splash_show
+      h2.pull-right.price_border $ #{@home.price}
+      h4 Bedrooms: #{@home.number_bedrooms}
+      h4 Bathrooms: #{@home.number_bathrooms}
+      h4 Square Feet: #{@home.sq_ft}
+      h4 Year Built: #{@home.year_built}
+      h4 Lot Size: #{@home.lot_size}
+      h4 Number of Floors: #{@home.number_of_floors}
+      h4 Roof Type: #{@home.roof}
+      h4 Parking: #{@home.parking}
+      - if @home.hoa?
+        h4 HOA: $#{@home.hoa_fee}
+      - else
+        h4 No HOA
+  .row
+    .col-md-12.description_show
+      h4 #{@home.description}

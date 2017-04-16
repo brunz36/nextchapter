@@ -27,3 +27,44 @@ body {
   border-bottom: 3px solid #f1ac38;
   color: #000;
 }
+
+.pagination {
+
+  li {
+  list-style: none;
+  display: inline;
+  font-size: 150%;
+  letter-spacing: 1em;
+  }
+
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+}
+
+.black_text {
+  color: #333;
+}
+
+.splash_show {
+  border-left: 10px solid #f1ac38;
+  background-color: #aaa;
+  height: 25em;
+  h4 {
+    font-size: 150%;
+  }
+}
+
+.description_show {
+  border-left: 10px solid #f1ac38;
+  background-color: #aaa;
+  padding: 1em;
+}
+
+.price_border {
+  border-bottom: 3px solid #f1ac38;
+  border-left: 3px solid #f1ac38;
+  border-bottom-left-radius: 0.3em;
+  padding: 0 0 0.1em 0.1em;
+}

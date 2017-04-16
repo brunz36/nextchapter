@@ -61,6 +61,9 @@ GEM
     bindex (0.5.0)
     bootstrap-social-rails (4.12.0)
       railties (>= 3.1)
+    bootstrap_kaminari (0.0.5)
+      kaminari (>= 0.12.4)
+      rails (>= 3.1.0)
     builder (3.2.3)
     byebug (9.0.6)
     concurrent-ruby (1.0.5)
@@ -249,6 +252,7 @@ DEPENDENCIES
   awesome_print
   bootstrap-generators!
   bootstrap-social-rails
+  bootstrap_kaminari
   byebug
   dotenv-rails
   font-awesome-rails

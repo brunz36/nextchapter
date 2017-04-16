@@ -5,10 +5,10 @@
   - @homes.each do | home |
     .media.listing
       .media-left
-        = link_to image_tag(home.image_url(:small)), home.image_url(:original)
+        = link_to image_tag(home.image_url(:small)), home
         h2.text-center $ #{home.price}
       .media-body
-        = link_to home, class: "btn btn-warning glyphicon glyphicon-book pull-right" do
+        = link_to home, class: "btn btn-warning glyphicon glyphicon-book pull-right black_text" do
           .btn_detail Details
         p.h4 = home.address
         p.h4 #{home.city}, #{home.state} #{home.zip}
@@ -19,97 +19,5 @@
         p= home.description
 
 .text-center
-  = paginate @homes
+  = paginate @homes, theme: "bootstrap"
   p = page_entries_info @homes
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/ 
-/ 
-/ .table-responsive
-/   table.table.table-striped.table-bordered.table-hover
-/     thead
-/       tr
-/         th Address
-/         th City
-/         th State
-/         th Zip
-/         th Number bedrooms
-/         th Number bathrooms
-/         th Sq ft
-/         th Price
-/         th Description
-/         /th Image data
-/         th Roof
-/         th Parking
-/         th Lot size
-/         th Hoa
-/         th Hoa fee
-/         th Number of floors
-/         th Year built
-/         th colspan=3
-/     tbody.table-body
-/       - @homes.each do | home |
-/         tr
-/           td= home.address
-/           td= home.city
-/           td= home.state
-/           td= home.zip
-/           td= home.number_bedrooms
-/           td= home.number_bathrooms
-/           td= home.sq_ft
-/           td= home.price
-/           td= home.description
-/           /td= home.image_data
-/           td= home.roof
-/           td= home.parking
-/           td= home.lot_size
-/           td= home.hoa
-/           td= home.hoa_fee
-/           td= home.number_of_floors
-/           td= home.year_built
-/           td= link_to home do
-/             span.glyphicon.glyphicon-ok
-/           td= link_to edit_home_path(home)
-/             span.glyphicon.glyphicon-pencil
-/           td= link_to home, method: :delete, data: { confirm: 'Are you sure?' }
-/             span.glyphicon.glyphicon-remove

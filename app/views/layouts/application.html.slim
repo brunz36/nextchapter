@@ -28,10 +28,10 @@ body
           - if logged_in?
             li
               p.navbar-text
-                | Hello #{current_user.name}
-            li = link_to "List a New Home", new_home_path
+                | HELLO #{current_user.name.upcase}
+            li = link_to "LIST A NEW HOME", new_home_path
             li
-              = link_to "Logout", logout_path
+              = link_to "LOGOUT", logout_path
           - else
             li
               = link_to auth_path(provider: 'github'), class: "" do

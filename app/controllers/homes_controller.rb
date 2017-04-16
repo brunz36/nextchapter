@@ -3,7 +3,7 @@ class HomesController < ApplicationController
 
   # GET /homes
   def index
-    @homes = Home.all.order(created_at: :desc).page params[:page]
+    @homes = Home.all.order(created_at: :asc).page params[:page]
   end
 
   # GET /homes/1
