@@ -3,7 +3,7 @@ class HomesController < ApplicationController
 
   # GET /homes
   def index
-    @homes = Home.all
+    @homes = Home.all.order(created_at: :desc).page params[:page]
   end
 
   # GET /homes/1
@@ -19,11 +19,17 @@ class HomesController < ApplicationController
   # GET /homes/1/edit
   def edit
     @home = Home.find(params[:id])
+
+    unless @home.can_this_user_edit?(current_user)
+      redirect_to homes_path, notice: 'You may not edit other users posts.'
+      return
+    end
   end
 
   # POST /homes
   def create
     @home = Home.new(home_params)
+    @home.created_by = current_user
 
     if @home.save
       redirect_to @home, notice: 'Home was successfully created.'
@@ -35,6 +41,12 @@ class HomesController < ApplicationController
   # PATCH/PUT /homes/1
   def update
     @home = Home.find(params[:id])
+
+    unless @home.can_this_user_edit?(current_user)
+      redirect_to homes_path, notice: 'You may not edit other users posts.'
+      return
+    end
+
     if @home.update(home_params)
       redirect_to @home, notice: 'Home was successfully updated.'
     else
@@ -45,14 +57,20 @@ class HomesController < ApplicationController
   # DELETE /homes/1
   def destroy
     @home = Home.find(params[:id])
-    @home.destroy
-    redirect_to homes_url, notice: 'Home was successfully destroyed.'
+
+    unless @home.can_this_user_destroy?(current_user)
+      redirect_to homes_path, notice: 'You may not delete other users posts.'
+    else
+      @home.destroy
+      redirect_to homes_url, notice: 'Home listing was successfully destroyed.'
+    end
+
   end
 
   private
 
   # Only allow a trusted parameter "white list" through.
   def home_params
-    params.require(:home).permit(:address, :city, :state, :zip, :number_bedrooms, :number_bathrooms, :sq_ft, :price, :description, :created_by_id, :image_data, :roof, :parking, :lot_size, :hoa, :hoa_fee, :number_of_floors, :year_built)
+    params.require(:home).permit(:address, :city, :state, :zip, :number_bedrooms, :number_bathrooms, :sq_ft, :price, :description, :image, :roof, :parking, :lot_size, :hoa, :hoa_fee, :number_of_floors, :year_built)
   end
 end

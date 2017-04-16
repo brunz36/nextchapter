@@ -29,12 +29,14 @@ body
             li
               p.navbar-text
                 | Hello #{current_user.name}
-            li = link_to "Create New Homes", new_home_path
+            li = link_to "List a New Home", new_home_path
             li
               = link_to "Logout", logout_path
           - else
             li
-              = link_to 'Login', login_path
+              = link_to auth_path(provider: 'github'), class: "" do
+                span.fa.fa-github
+                |  Log In with GitHub
                 
   .container
     - flash.each do |name, msg|

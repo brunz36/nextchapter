@@ -25,7 +25,6 @@ gem 'uglifier', '>= 1.3.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -54,14 +53,19 @@ gem 'font-awesome-rails'
 gem 'jquery-ui-rails'
 gem 'slim-rails'
 
-# USER INSTALLED
-
 ## PAGINATION
 gem 'kaminari'
 
 ## AUTHENTICATION
 gem 'omniauth'
 gem 'omniauth-github'
+
+## IMAGE UPLOADING & PROCESSING
+gem 'shrine'
+gem 'shrine-sql'
+gem 'roda'
+gem 'image_processing'
+gem 'mini_magick', '>= 4.3.5'
 
 group :development do
   gem 'awesome_print'

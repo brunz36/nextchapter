@@ -1,5 +1,6 @@
 body {
   background-color: #eee;
+  font-family: Tahoma, Geneva, sans-serif;
 }
 
 .navbar {
@@ -16,6 +17,13 @@ body {
   }
 }
 
-.logo {
-  padding-right: 1em;
+.btn_detail {
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+.listing {
+  background-color: #aaa;
+  padding-bottom: 1em;
+  border-bottom: 3px solid #f1ac38;
+  color: #000;
 }

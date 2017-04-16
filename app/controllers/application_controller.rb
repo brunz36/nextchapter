@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate!
     unless logged_in?
-      redirect_to auth_path(provider: 'github')
+      redirect_to root_path
     end
   end
 end
