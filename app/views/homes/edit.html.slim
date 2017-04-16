@@ -1,10 +1,8 @@
 .page-header
-  = link_to homes_path, class: 'btn btn-default' do
-    span.glyphicon.glyphicon-list-alt
-    | Back
-  = link_to @home, class: 'btn btn-primary' do
-    span.glyphicon.glyphicon-info-sign
-    | Show
-  h1 Editing home
+  = link_to homes_path, class: 'btn btn-warning' do 
+    span.glyphicon.glyphicon-chevron-left
+    |  Return
+
+  h1 rewrite this Chapter
 
 = render 'form'

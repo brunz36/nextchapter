@@ -5,7 +5,10 @@
   - @homes.each do | home |
     .media.listing
       .media-left
-        = link_to image_tag(home.image_url(:small)), home
+        - if home.image_url(:small)
+          = link_to image_tag(home.image_url(:small)), home
+        - else
+          = link_to image_tag("no_img.jpg", size:"300"), home
         h2.text-center $ #{home.price}
       .media-body
         = link_to home, class: "btn btn-warning glyphicon glyphicon-book pull-right black_text" do

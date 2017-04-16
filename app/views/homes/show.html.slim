@@ -7,20 +7,23 @@
       span.glyphicon.glyphicon-book
       |  delete this Chapter
   h2 =@home.address
-  - if @home.created_at > Time.now - 1.days
+  - if @home.created_at > 1.days.ago
     h3.pull-right NEW LISTING
-  - elsif @home.created_at > Time.now - 2.days
+  - elsif @home.created_at > 2.days.ago
     h3.pull-right.text-success Listed #{time_ago_in_words(@home.created_at)} ago
-  - elsif @home.created_at > Time.now - 30.days
+  - elsif @home.created_at > 30.days.ago
     h3.pull-right Listed #{time_ago_in_words(@home.created_at)} ago
-  - elsif @home.created_at < Time.now - 30.days
+  - elsif @home.created_at < 30.days.ago
     h3.pull-right.text-danger Listed #{time_ago_in_words(@home.created_at)} ago
   h2 #{@home.city}, #{@home.state} #{@home.zip}
   
 .container-fluid
   .row
     .col-md-6.splash_show
-      = image_tag(@home.image_url(:medium))
+      - if @home.image_url(:medium)
+        = image_tag(@home.image_url(:medium))
+      - else
+        = image_tag("no_img.jpg", size:"500x333")
     .col-md-6.splash_show
       h2.pull-right.price_border $ #{@home.price}
       h4 Bedrooms: #{@home.number_bedrooms}
