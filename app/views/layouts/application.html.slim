@@ -16,14 +16,20 @@ html
     = csrf_meta_tags
 body
 
-  nav.navbar.navbar-fixed-top role="navigation" 
+  nav.navbar.navbar-default.navbar-fixed-top[role="navigation"]
     .container
       .navbar-header
+        button.navbar-toggle.collapsed[type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"]
+          span.sr-only
+            | Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
         .navbar-brand
           = link_to homes_path, class: "" do
             span.glyphicon.glyphicon-book.logo
             | nextChapter
-      navbar.pull-right
+      #navbar.collapse.navbar-collapse.pull-right
         ul.nav.navbar-nav
           - if logged_in?
             li
@@ -37,7 +43,7 @@ body
               = link_to auth_path(provider: 'github'), class: "" do
                 span.fa.fa-github
                 |  Log In with GitHub
-                
+  
   .container
     - flash.each do |name, msg|
       = content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do
@@ -49,3 +55,7 @@ body
         = msg
         
     = yield
+    
+    
+    
+  
