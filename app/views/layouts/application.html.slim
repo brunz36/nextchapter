@@ -24,7 +24,7 @@ body
             | Toggle navigation
           span.glyphicon.glyphicon-chevron-down
         .navbar-brand
-          = link_to homes_path, class: "" do
+          = link_to homes_path do
             span.glyphicon.glyphicon-book.logo
             | nextChapter
       #navbar.collapse.navbar-collapse.pull-right
@@ -38,7 +38,7 @@ body
               = link_to "LOGOUT", logout_path
           - else
             li
-              = link_to auth_path(provider: 'github'), class: "" do
+              = link_to auth_path(provider: 'github') do
                 span.fa.fa-github.black_text
                 |  Log In with GitHub
   
