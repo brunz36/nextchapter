@@ -4,6 +4,11 @@ class HomesController < ApplicationController
   # GET /homes
   def index
     @homes = Home.all.order(created_at: :asc).page params[:page]
+    if params[:search]
+      @homes = Home.search(params[:search]).order(created_at: :asc).page params[:page]
+    else
+      @homes = Home.all.order(created_at: :asc).page params[:page]
+    end
   end
 
   # GET /homes/1
@@ -64,7 +69,6 @@ class HomesController < ApplicationController
       @home.destroy
       redirect_to homes_url, notice: 'Home listing was successfully destroyed.'
     end
-
   end
 
   private
