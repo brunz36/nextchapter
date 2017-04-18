@@ -25,10 +25,20 @@ body {
   font-family: Tahoma, Geneva, sans-serif;
 }
 
+.index_listing {
+  h4, p {
+    margin: 0;
+  }
+  h2 {
+    margin: 0;
+    padding-bottom: 0.5em;
+  }
+  margin-bottom: 1em;
+}
+
 .listing {
+  border-left: 10px solid #f1ac38;
   background-color: #aaa;
-  padding-bottom: 1em;
-  border-bottom: 3px solid #f1ac38;
   color: #000;
 }
 
@@ -55,6 +65,25 @@ body {
   border: 0;
   border-radius: 0;
   margin-bottom: 0;
+}
+
+.index-img {
+  padding: 0;
+  background-color: #aaa;
+  border-left: 10px solid #f1ac38;
+  height: 16em;
+}
+
+.index_details {
+  height: 16em;
+  line-height: 2em;
+  p {
+    line-height: 2em;
+  }
+}
+
+.index_des {
+  height: 15em;
 }
 
 .splash_show {
@@ -104,5 +133,8 @@ body {
 @media only screen and (max-width: 768px) {
   .form_box {
     height: auto;
+  }
+  .index-img {
+    height: 17em;
   }
 }
