@@ -7,7 +7,7 @@
       span.glyphicon.glyphicon-book
       |  delete this Chapter
   h2 =@home.address
-  h3.pull-right class="#{home_age_class(@home.created_at)}" Listed #{time_ago_in_words(@home.created_at)} ago
+  h3 class="#{home_age(@home.created_at)} pull-right" Listed #{time_ago_in_words(@home.created_at)} ago
   h2 #{@home.city}, #{@home.state} #{@home.zip}
   
 .container-fluid

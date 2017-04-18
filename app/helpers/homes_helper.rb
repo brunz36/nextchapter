@@ -1,5 +1,5 @@
 module HomesHelper
-  def home_age_class(date)
+  def home_age(date)
     if date < 30.days.ago
       return "old_home"
     elsif date >= 2.days.ago
