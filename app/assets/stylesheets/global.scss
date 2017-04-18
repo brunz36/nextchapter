@@ -51,6 +51,12 @@ body {
   color: #333;
 }
 
+.thumbnail {
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
 .splash_show {
   border-left: 10px solid #f1ac38;
   background-color: #aaa;
@@ -59,6 +65,7 @@ body {
     font-size: 150%;
   }
 }
+
 
 .description_show {
   border-left: 10px solid #f1ac38;

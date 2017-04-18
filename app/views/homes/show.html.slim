@@ -10,9 +10,9 @@
   h3 class="#{home_age(@home.created_at)} pull-right" Listed #{time_ago_in_words(@home.created_at)} ago
   h2 #{@home.city}, #{@home.state} #{@home.zip}
   
-.container-fluid
+.container-fluid.
   .row
-    .col-md-6.splash_show
+    .col-md-6.thumbnail.splash_show
       - if @home.image_url(:medium)
         = image_tag(@home.image_url(:medium))
       - else
