@@ -11,6 +11,8 @@ class Home < ApplicationRecord
   validates :number_of_floors, length: { is: 1 }, numericality: true
   validates :year_built, length: { is: 4 }, numericality: true
 
+  is_impressionable
+
   include ImageUploader[:image]
 
   belongs_to :created_by, class_name: "User"

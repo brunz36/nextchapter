@@ -1,5 +1,6 @@
 class HomesController < ApplicationController
   before_action :authenticate!, except: [:index]
+  impressionist actions: [:show], unique: [:request_hash]
 
   # GET /homes
   def index

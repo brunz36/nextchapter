@@ -41,4 +41,4 @@ html
         .col-lg-8
           = form_tag(homes_path, :method => "get", id: "search-form") do
             = text_field_tag :search, params[:search], class: "col-md-6", placeholder: "Search for your nextChapter"
-            = submit_tag "Search", class: "btn btn-warning black_text", :name => nil
+            = submit_tag "Search", class: "btn btn-warning btn-sm black_text", :name => nil

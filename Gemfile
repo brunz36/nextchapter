@@ -68,6 +68,9 @@ gem 'roda'
 gem 'image_processing'
 gem 'mini_magick', '>= 4.3.5'
 
+## HIT COUNTER
+gem 'impressionist'
+
 group :development do
   gem 'awesome_print'
   gem 'dotenv-rails'
