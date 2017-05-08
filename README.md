@@ -21,4 +21,4 @@
   - Oauth User Authentication
 
 ## DEMO
-![](https://raw.githubusercontent.com/brunz36/ironnews-image/master/app/assets/images/ironnews-image.gif)
+![](https://github.com/brunz36/nextchapter/blob/master/app/assets/images/nextchapter.gif)
