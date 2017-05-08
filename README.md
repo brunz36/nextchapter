@@ -21,4 +21,4 @@
   - Oauth User Authentication
 
 ## DEMO
-![](https://github.com/brunz36/nextchapter/blob/master/app/assets/images/nextchapter.gif)
+![](https://raw.githubusercontent.com/brunz36/nextchapter/master/app/assets/images/nextchapter.gif)
